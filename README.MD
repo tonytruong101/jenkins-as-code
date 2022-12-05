@@ -28,8 +28,16 @@ COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/plugi
 
 SCM 
 
-- [Bitbucket](https://plugins.jenkins.io/bitbucket/) `.docker/jenkins_plugins/custom_jenkin_plugins/bitbucket`
-- [GitLab](https://plugins.jenkins.io/gitlab-plugin/) `.docker/jenkins_plugins/custom_jenkin_plugins/gitlab`
+- [Bitbucket](https://plugins.jenkins.io/bitbucket/) 
+
+```
+.docker/jenkins_plugins/custom_jenkin_plugins/bitbucket
+```
+- [GitLab](https://plugins.jenkins.io/gitlab-plugin/)
+
+```
+.docker/jenkins_plugins/custom_jenkin_plugins/gitlab
+```
 - [Generic Webhook Trigger](https://plugins.jenkins.io/generic-webhook-trigger/) `.docker/jenkins_plugins/custom_jenkin_plugins/generic-webhook-trigger`
 
 Tools
