@@ -38,7 +38,7 @@ COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/theme
 ```
 Dark-theme
 
-![screenshot](./src/images/jenkins_darktheme.png)
+![screenshot](./src/images/jenkins_darktheme_dark.png)
 
 ```
 COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/dark-theme /usr/share/jenkins/ref/plugins
