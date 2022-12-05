@@ -10,9 +10,9 @@ Plugins can be selectively specified, also including various different Jenkins U
 
 ## Directory Setup 
 
-Default Jenkins plugins will be found under `.docker/jenkins_plugins/default_jenkin_plugins/`
-Custom Jenkins plugins will be found under `.docker/jenkins_plugins/custom_jenkin_plugins/`
-Custom Jenkins Themes will be found under `.docker/jenkins_plugins/custom_jenkin_plugins/themes/`
+- Default Jenkins plugins will be found under `.docker/jenkins_plugins/default_jenkin_plugins/`
+- Custom Jenkins plugins will be found under `.docker/jenkins_plugins/custom_jenkin_plugins/`
+- Custom Jenkins Themes will be found under `.docker/jenkins_plugins/custom_jenkin_plugins/themes/`
 
 By default, only Default & Custome Jenkins Plugins will be installed during the `docker build step` Please follow the steps under `Themes` for more information on how to preinstall & configure your theme settings using `configuration-as-code` plugin.  
 
