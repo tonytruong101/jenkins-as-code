@@ -39,6 +39,8 @@ Tools
 - [Amazon ECS](https://plugins.jenkins.io/amazon-ecs/) `.docker/jenkins_plugins/custom_jenkin_plugins/amazon-ecs`
 - [Configuration As Code](https://www.jenkins.io/projects/jcasc/) `.docker/jenkins_plugins/custom_jenkin_plugins/configuration-as-code`
 - [Docker](https://plugins.jenkins.io/docker-plugin/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker`
+- [Docker Pipeline](https://plugins.jenkins.io/docker-workflow/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker-pipeline`
+- [Docker Build & Push](https://plugins.jenkins.io/docker-build-publish/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker-build-push`
 - [NodeJs](https://plugins.jenkins.io/nodejs/) `.docker/jenkins_plugins/custom_jenkin_plugins/nodejs`
 
 SDKs
