@@ -16,6 +16,25 @@ Plugins can be selectively specified, also including various different Jenkins U
 
 By default, only Default & Custome Jenkins Plugins will be installed during the `docker build step` Please follow the steps under `Themes` for more information on how to preinstall & configure your theme settings using `configuration-as-code` plugin.  
 
+## Custom Plugins List 
+
+The following are a list of Plugins that we've built into this repository. 
+
+SCM 
+
+- Bitbucket
+- GitLab
+
+Tools
+
+- Docker
+
+Themes
+
+- Blue Ocean
+- Dark Theme
+- Simple Theme
+
 # Quick Start
 
 To see a working demo, simply git clone this repo then run `docker-compose up -d` which will create a new jenkins-docker-container on local.
@@ -24,7 +43,6 @@ To see a working demo, simply git clone this repo then run `docker-compose up -d
 ## Dockerfile Instructions
 
 You can create your own custom Jenkins image based off off `jenkins/jenkins` docker image that is pre-configured with plugins. Which you can then use the `configuration-as-code` Jenkins Plugin to finalize the rest of your setup. 
-
 
 ## Themes
 

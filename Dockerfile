@@ -12,7 +12,7 @@ COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/*/ /u
 
 ## copy one specific plugin 
 
-# COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/directory/plugin.jpi /usr/share/jenkins/ref/plugins
+# COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/pluginDirectory/ /usr/share/jenkins/ref/plugins
 
 ## Uncomment the them you want, it isn't recommended to use multiple themes.
 
