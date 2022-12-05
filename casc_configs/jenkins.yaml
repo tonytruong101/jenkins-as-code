@@ -18,7 +18,7 @@ jenkins:
         name: "static-agent1"
         remoteFS: "/home/jenkins-agent1"
         launcher:
-          jnlp:
+          inbound:
             workDirSettings:
               disabled: true
               failIfWorkDirIsMissing: false
@@ -28,7 +28,7 @@ jenkins:
         name: "static-agent2"
         remoteFS: "/home/jenkins-agent2"
         launcher:
-          jnlp:
+          inbound:
             workDirSettings:
               disabled: true
               failIfWorkDirIsMissing: false

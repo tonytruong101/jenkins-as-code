@@ -24,17 +24,21 @@ SCM
 
 - [Bitbucket](https://plugins.jenkins.io/bitbucket/)
 - [GitLab](https://plugins.jenkins.io/gitlab-plugin/)
+- [Generic Webhook Trigger](https://plugins.jenkins.io/generic-webhook-trigger/)
 
 Tools
 
 - [Configuration As Code](https://www.jenkins.io/projects/jcasc/)
 - [Docker](https://plugins.jenkins.io/docker-plugin/)
+- [NodeJs](https://plugins.jenkins.io/nodejs/)
 
 Themes
 
 - [Blue Ocean](https://plugins.jenkins.io/blueocean/)
 - [Dark Theme](https://plugins.jenkins.io/dark-theme/)
+- [Material Theme](https://plugins.jenkins.io/material-theme/)
 - [Simple Theme](https://plugins.jenkins.io/simple-theme-plugin/)
+
 
 # Quick Start
 
@@ -61,4 +65,96 @@ COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/theme
 
 ```
 COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/dark-theme /usr/share/jenkins/ref/plugins
+```
+
+# Material-theme
+
+![screenshot](./src/images/jenkins_materialtheme_red.png)
+
+```
+COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/material-theme /usr/share/jenkins/ref/plugins
+```
+
+## Jenkins Configuration As Code (JCasc)
+
+The following code snippets below are for your reference when building out your own `jcasc.yaml` file. During the docker build step, the docker image will be built with `CASC_CONFIGS` mounted to `/var/jenkins_home/casc_configs` which is where `configuration-as-code` will check for configuration `YAML` files.
+
+
+Jenkins
+
+A simple Jenkins `YAML` file that serves as the base of all of our `YAML` files. Applying this configuration will create a standard Jenkins Master Node with 5 concurrent builds. 
+
+```
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
+  numExecutors: 5
+  scmCheckoutRetryCount: 2
+  mode: NORMAL
+```
+
+Agents
+
+A simple Jenkins Agent `YAML` configuration block that you can add within your `jcasc.yaml` files to configure your `jenkins-agents`. The following details below will include an example confiuguration block.
+
+SSH-Agent
+```
+ nodes:
+    - permanent:
+        name: "jenkins-sshagent-1"
+        remoteFS: "/home/jenkins-sshagent1"
+        retentionStrategy: "always"
+        launcher:
+          ssh:
+            credentialsId: "jenkins_ssh"
+            host: "localhost:8080"
+            port: 22
+            sshHostKeyVerificationStrategy: "knownHostsFileKeyVerificationStrategy"
+```
+
+- `name:` The Name of your Jenkins Agent
+- `remoteFS:` Location of remote directory for Jenkins Java Agent 
+- `retentenionStrategy:` How often to keep this Agent Running For
+- `launcher:` Our connection launcher method for the agent
+- `ssh:` Our connection method
+- `host:` Our Jenkins Agent server address
+- `port:` Our Jenkins Agent Port
+- `sshHostKeyVerificationStrategy:` SSH auth method
+
+
+Inbound-Agent
+
+```
+    - permanent:
+        name: "static-agent1"
+        remoteFS: "/home/jenkins-agent1"
+        launcher:
+          inbound:
+            workDirSettings:
+              disabled: true
+              failIfWorkDirIsMissing: false
+              internalDir: "remoting"
+              workDirPath: "/tmp"
+```
+
+Themes
+
+A simple `jcasc` `YAML` block for themes 
+
+
+Dark Theme
+
+```
+unclassified:
+  themeManager:
+    disableUserThemes: true
+    theme: "dark" 
+```
+
+Material Theme
+
+```
+unclassified:
+  themeManager:
+    disableUserThemes: true
+    theme: "material-indigo" # or 'material-red' or 'material-grey' or 'material-light-blue'
 ```
