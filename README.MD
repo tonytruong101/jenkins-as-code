@@ -34,26 +34,25 @@ SCM
 
 Tools
 
-- [Amazon EC2](https://plugins.jenkins.io/amazon-ec2/) ``
-- [Amazon ECR](https://plugins.jenkins.io/amazon-ecr/) ``
-- [Amazon ECS](https://plugins.jenkins.io/amazon-ecs/) ``
-- [Configuration As Code](https://www.jenkins.io/projects/jcasc/) ``
-- [Docker](https://plugins.jenkins.io/docker-plugin/) ``
-- [NodeJs](https://plugins.jenkins.io/nodejs/) ``
+- [Amazon EC2](https://plugins.jenkins.io/amazon-ec2/) `.docker/jenkins_plugins/custom_jenkin_plugins/amazon-ec2`
+- [Amazon ECR](https://plugins.jenkins.io/amazon-ecr/) `.docker/jenkins_plugins/custom_jenkin_plugins/amazon-ecr`
+- [Amazon ECS](https://plugins.jenkins.io/amazon-ecs/) `.docker/jenkins_plugins/custom_jenkin_plugins/amazon-ecs`
+- [Configuration As Code](https://www.jenkins.io/projects/jcasc/) `.docker/jenkins_plugins/custom_jenkin_plugins/configuration-as-code`
+- [Docker](https://plugins.jenkins.io/docker-plugin/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker`
+- [NodeJs](https://plugins.jenkins.io/nodejs/) `.docker/jenkins_plugins/custom_jenkin_plugins/nodejs`
 
 SDKs
 
-- [aws-java-sdk-sqs](https://plugins.jenkins.io/aws-java-sdk-sqs/)
-- [aws-java-sdk-sns](https://plugins.jenkins.io/aws-java-sdk-sns/)
-- [aws-java-sdk-cloudformation](https://plugins.jenkins.io/aws-java-sdk-cloudformation/)
-- [aws-java-sdk-elastic-beanstalk](https://plugins.jenkins.io/aws-java-sdk-elasticbeanstalk/)
-- [aws-java-sdk-ecs](https://plugins.jenkins.io/aws-java-sdk-ecs/)
-- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-iam/)
-- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-efs/)
-- [aws-java-sdk-ssm](https://plugins.jenkins.io/aws-java-sdk-ssm/)
-- [aws-java-sdk-logs](https://plugins.jenkins.io/aws-java-sdk-logs/)
-- [aws-java-sdk-codebuild](https://plugins.jenkins.io/aws-java-sdk-codebuild/)
-- [aws-java-sdk](https://plugins.jenkins.io/aws-java-sdk/)
+- [aws-java-sdk-sqs](https://plugins.jenkins.io/aws-java-sdk-sqs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-sqs`
+- [aws-java-sdk-sns](https://plugins.jenkins.io/aws-java-sdk-sns/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-sns`
+- [aws-java-sdk-cloudformation](https://plugins.jenkins.io/aws-java-sdk-cloudformation/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-cloudformation`
+- [aws-java-sdk-elastic-beanstalk](https://plugins.jenkins.io/aws-java-sdk-elasticbeanstalk/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-elasticbeanstalk`
+- [aws-java-sdk-ecs](https://plugins.jenkins.io/aws-java-sdk-ecs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-ecs`
+- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-iam/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-iam`
+- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-efs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-efs`
+- [aws-java-sdk-ssm](https://plugins.jenkins.io/aws-java-sdk-ssm/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-ssm`
+- [aws-java-sdk-logs](https://plugins.jenkins.io/aws-java-sdk-logs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-logs`
+- [aws-java-sdk-codebuild](https://plugins.jenkins.io/aws-java-sdk-codebuild/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-codebuild`
 
 Themes
 
