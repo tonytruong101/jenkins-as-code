@@ -18,26 +18,18 @@ By default, only Default & Custome Jenkins Plugins will be installed during the 
 
 ## Custom Plugins List 
 
-The following are a list of Plugins that we've built into this repository. You can customize your docker image using the preinstalled plugin list below. By simply adding the following line into the `Dockerfile`
+The following are a list of Plugins that we've built into this repository.
+
+Simply add the following line into the `Dockerfile` for every plugin you wish to install, replacing `pluginDirectory` with the plugins you wish to preload into the docker-image.
 
 ```
 COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/pluginDirectory /usr/share/jenkins/ref/plugins
 ```
 
-
-
 SCM 
 
-- [Bitbucket](https://plugins.jenkins.io/bitbucket/) 
-
-```
-.docker/jenkins_plugins/custom_jenkin_plugins/bitbucket
-```
-- [GitLab](https://plugins.jenkins.io/gitlab-plugin/)
-
-```
-.docker/jenkins_plugins/custom_jenkin_plugins/gitlab
-```
+- [Bitbucket](https://plugins.jenkins.io/bitbucket/) `.docker/jenkins_plugins/custom_jenkin_plugins/bitbucket` 
+- [GitLab](https://plugins.jenkins.io/gitlab-plugin/)`.docker/jenkins_plugins/custom_jenkin_plugins/gitlab` 
 - [Generic Webhook Trigger](https://plugins.jenkins.io/generic-webhook-trigger/) `.docker/jenkins_plugins/custom_jenkin_plugins/generic-webhook-trigger`
 
 Tools
