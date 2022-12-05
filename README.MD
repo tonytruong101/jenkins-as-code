@@ -41,6 +41,7 @@ Tools
 - [Docker](https://plugins.jenkins.io/docker-plugin/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker`
 - [Docker Pipeline](https://plugins.jenkins.io/docker-workflow/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker-pipeline`
 - [Docker Build & Push](https://plugins.jenkins.io/docker-build-publish/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker-build-push`
+- [Kubernetes](https://plugins.jenkins.io/kubernetes/) `.docker/jenkins_plugins/custom_jenkin_plugins/kubernetes/`
 - [NodeJs](https://plugins.jenkins.io/nodejs/) `.docker/jenkins_plugins/custom_jenkin_plugins/nodejs`
 
 SDKs
