@@ -26,17 +26,17 @@ To see a working demo, simply git clone this repo then run `docker-compose up -d
 You can create your own custom Jenkins image based off off `jenkins/jenkins` docker image that is pre-configured with plugins. Which you can then use the `configuration-as-code` Jenkins Plugin to finalize the rest of your setup. 
 
 
-# Themes
+## Themes
 
 Add or uncomment the following lines to your `Dockerfile` for the theme you wish to preinstall with the Jenkins docker image
 
-Blue Ocean
+# Blue Ocean
 
 ![screenshot](./src/images/jenkins_blueocean.png)
 ```
 COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/blue-ocean /usr/share/jenkins/ref/plugins
 ```
-Dark-theme
+# Dark-theme
 
 ![screenshot](./src/images/jenkins_darktheme_dark.png)
 
