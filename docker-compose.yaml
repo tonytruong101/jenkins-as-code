@@ -1,7 +1,8 @@
 version: '3'
 services:
   jenkins:
-    image: jenkins/jenkins:lts-jdk11
+    image: custom/jenkins-web
+    build: . 
     privileged: true
     user: root
     ports:

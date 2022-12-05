@@ -34,3 +34,10 @@ jenkins:
               failIfWorkDirIsMissing: false
               internalDir: "remoting"
               workDirPath: "/tmp"
+
+#Uncomment if you are installing dark-theme to set the configuration as code
+
+#unclassified:
+  #themeManager:
+    #disableUserThemes: true
+      #theme: "dark" # use 'dark' for forcing the dark theme regardless of OS settings             
