@@ -22,18 +22,19 @@ The following are a list of Plugins that we've built into this repository.
 
 SCM 
 
-- Bitbucket
-- GitLab
+- [Bitbucket](https://plugins.jenkins.io/bitbucket/)
+- [GitLab](https://plugins.jenkins.io/gitlab-plugin/)
 
 Tools
 
-- Docker
+- [Configuration As Code](https://www.jenkins.io/projects/jcasc/)
+- [Docker](https://plugins.jenkins.io/docker-plugin/)
 
 Themes
 
-- Blue Ocean
-- Dark Theme
-- Simple Theme
+- [Blue Ocean](https://plugins.jenkins.io/blueocean/)
+- [Dark Theme](https://plugins.jenkins.io/dark-theme/)
+- [Simple Theme](https://plugins.jenkins.io/simple-theme-plugin/)
 
 # Quick Start
 
