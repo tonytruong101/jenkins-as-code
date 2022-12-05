@@ -1,3 +1,4 @@
-.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk/*.jpi filter=lfs diff=lfs merge=lfs -text
-.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk/aws-java-sdk.jpi filter=lfs diff=lfs merge=lfs -text
+.docker/jenkins_plugins/custom_jenkin_plugins/*/*.jpi filter=lfs diff=lfs merge=lfs -text
+.docker/jenkins_plugins/custom_jenkin_plugins/sdk/*/*.jpi filter=lfs diff=lfs merge=lfs -text
+.docker/jenkins_plugins/default_jenkin_plugins/*/*.jpi filter=lfs diff=lfs merge=lfs -text
 *.jpi filter=lfs diff=lfs merge=lfs -text
