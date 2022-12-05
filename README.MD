@@ -18,19 +18,42 @@ By default, only Default & Custome Jenkins Plugins will be installed during the 
 
 ## Custom Plugins List 
 
-The following are a list of Plugins that we've built into this repository. 
+The following are a list of Plugins that we've built into this repository. You can customize your docker image using the preinstalled plugin list below. By simply adding the following line into the `Dockerfile`
+
+```
+COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/pluginDirectory /usr/share/jenkins/ref/plugins
+```
+
+
 
 SCM 
 
-- [Bitbucket](https://plugins.jenkins.io/bitbucket/)
-- [GitLab](https://plugins.jenkins.io/gitlab-plugin/)
-- [Generic Webhook Trigger](https://plugins.jenkins.io/generic-webhook-trigger/)
+- [Bitbucket](https://plugins.jenkins.io/bitbucket/) `.docker/jenkins_plugins/custom_jenkin_plugins/bitbucket`
+- [GitLab](https://plugins.jenkins.io/gitlab-plugin/) `.docker/jenkins_plugins/custom_jenkin_plugins/gitlab`
+- [Generic Webhook Trigger](https://plugins.jenkins.io/generic-webhook-trigger/) `.docker/jenkins_plugins/custom_jenkin_plugins/generic-webhook-trigger`
 
 Tools
 
-- [Configuration As Code](https://www.jenkins.io/projects/jcasc/)
-- [Docker](https://plugins.jenkins.io/docker-plugin/)
-- [NodeJs](https://plugins.jenkins.io/nodejs/)
+- [Amazon EC2](https://plugins.jenkins.io/amazon-ec2/) ``
+- [Amazon ECR](https://plugins.jenkins.io/amazon-ecr/) ``
+- [Amazon ECS](https://plugins.jenkins.io/amazon-ecs/) ``
+- [Configuration As Code](https://www.jenkins.io/projects/jcasc/) ``
+- [Docker](https://plugins.jenkins.io/docker-plugin/) ``
+- [NodeJs](https://plugins.jenkins.io/nodejs/) ``
+
+SDKs
+
+- [aws-java-sdk-sqs](https://plugins.jenkins.io/aws-java-sdk-sqs/)
+- [aws-java-sdk-sns](https://plugins.jenkins.io/aws-java-sdk-sns/)
+- [aws-java-sdk-cloudformation](https://plugins.jenkins.io/aws-java-sdk-cloudformation/)
+- [aws-java-sdk-elastic-beanstalk](https://plugins.jenkins.io/aws-java-sdk-elasticbeanstalk/)
+- [aws-java-sdk-ecs](https://plugins.jenkins.io/aws-java-sdk-ecs/)
+- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-iam/)
+- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-efs/)
+- [aws-java-sdk-ssm](https://plugins.jenkins.io/aws-java-sdk-ssm/)
+- [aws-java-sdk-logs](https://plugins.jenkins.io/aws-java-sdk-logs/)
+- [aws-java-sdk-codebuild](https://plugins.jenkins.io/aws-java-sdk-codebuild/)
+- [aws-java-sdk](https://plugins.jenkins.io/aws-java-sdk/)
 
 Themes
 
@@ -105,7 +128,7 @@ SSH-Agent
         retentionStrategy: "always"
         launcher:
           ssh:
-            credentialsId: "jenkins_ssh"
+            credentialsId: $SSH_CREDENTIALS
             host: "localhost:8080"
             port: 22
             sshHostKeyVerificationStrategy: "knownHostsFileKeyVerificationStrategy"
