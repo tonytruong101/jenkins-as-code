@@ -1,2 +1,3 @@
 ##Jenkins Home
 jenkins_home/
+.docker/jenkins_plugins
