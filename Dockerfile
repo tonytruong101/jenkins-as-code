@@ -1,33 +1,13 @@
 FROM jenkins/jenkins
 
 ## Default Plugins that are recommended by Jenkins during intial installation. 
+COPY --chown=jenkins:jenkins default_plugins.txt /usr/share/jenkins/ref/default_plugins.txt
+COPY --chown=jenkins:jenkins custom_plugins.txt /usr/share/jenkins/ref/custom_plugins.txt
+RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/default_plugins.txt
+RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/custom_plugins.txt
 
-COPY --chown=jenkins:jenkins .docker/jenkins_plugins/default_jenkin_plugins /usr/share/jenkins/ref/plugins
 
-## Custom Plugins. You can set this up to copy the entire directory or target your own plugins. 
+#Uncomment if you want to preload themes into your docker image
+# COPY --chown=jenkins:jenkins themes.txt /usr/share/jenkins/ref/themes.txt
+#RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/themes.txt
 
-## Copy entire custom jenkins plugin directory.
-
-COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/*/ /usr/share/jenkins/ref/plugins
-
-## Copy entire sdk's folder.
-
-COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/sdk/*/ /usr/share/jenkins/plugins
-
-## Copy specific SDK plugin
-
-#COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/sdk/pluginDirectory/ /usr/share/jenkins/ref/plugins
-
-## copy one specific plugin 
-
-#COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/pluginDirectory/ /usr/share/jenkins/ref/plugins
-
-## CUSTOM THEME OPTIONS
-## Uncomment the theme you want, it isn't recommended to use multiple themes.
-
-## Build Jenkins Image with Blue Ocean Theme
-
-#COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/blue-ocean /usr/share/jenkins/ref/plugins
-
-## Build Jenkins Image with Dark-theme
-#COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/dark-theme /usr/share/jenkins/ref/plugins

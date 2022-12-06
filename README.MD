@@ -10,9 +10,9 @@ Plugins can be selectively specified, also including various different Jenkins U
 
 ## Directory Setup 
 
-- Default Jenkins plugins will be found under `.docker/jenkins_plugins/default_jenkin_plugins/`
-- Custom Jenkins plugins will be found under `.docker/jenkins_plugins/custom_jenkin_plugins/`
-- Custom Jenkins Themes will be found under `.docker/jenkins_plugins/custom_jenkin_plugins/themes/`
+- Default Jenkins plugins will be found under `./default_plugins.txt`
+- Custom Jenkins plugins will be found under `./custom_plugins.txt`
+- Custom Jenkins Themes will be found under `./themes.txt`
 
 By default, only Default & Custome Jenkins Plugins will be installed during the `docker build step` Please follow the steps under `Themes` for more information on how to preinstall & configure your theme settings using `configuration-as-code` plugin.  
 
@@ -20,42 +20,27 @@ By default, only Default & Custome Jenkins Plugins will be installed during the 
 
 The following are a list of Plugins that we've built into this repository.
 
-Simply add the following line into the `Dockerfile` for every plugin you wish to install, replacing `pluginDirectory` with the plugins you wish to preload into the docker-image.
+If you don't want any of these plugins installed, simply remove the `custom_plugins.txt` file
+To skip a certain plugin, remove the plugin from `custom_plugins.txt`
 
-```
-COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/pluginDirectory /usr/share/jenkins/ref/plugins
-```
 
 SCM 
 
-- [Bitbucket](https://plugins.jenkins.io/bitbucket/) `.docker/jenkins_plugins/custom_jenkin_plugins/bitbucket` 
-- [GitLab](https://plugins.jenkins.io/gitlab-plugin/)`.docker/jenkins_plugins/custom_jenkin_plugins/gitlab` 
-- [Generic Webhook Trigger](https://plugins.jenkins.io/generic-webhook-trigger/) `.docker/jenkins_plugins/custom_jenkin_plugins/generic-webhook-trigger`
+- [Bitbucket](https://plugins.jenkins.io/bitbucket/)  
+- [GitLab](https://plugins.jenkins.io/gitlab-plugin/) 
+- [Generic Webhook Trigger](https://plugins.jenkins.io/generic-webhook-trigger/)
 
 Tools
 
-- [Amazon EC2](https://plugins.jenkins.io/amazon-ec2/) `.docker/jenkins_plugins/custom_jenkin_plugins/amazon-ec2`
-- [Amazon ECR](https://plugins.jenkins.io/amazon-ecr/) `.docker/jenkins_plugins/custom_jenkin_plugins/amazon-ecr`
-- [Amazon ECS](https://plugins.jenkins.io/amazon-ecs/) `.docker/jenkins_plugins/custom_jenkin_plugins/amazon-ecs`
-- [Configuration As Code](https://www.jenkins.io/projects/jcasc/) `.docker/jenkins_plugins/custom_jenkin_plugins/configuration-as-code`
-- [Docker](https://plugins.jenkins.io/docker-plugin/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker`
-- [Docker Pipeline](https://plugins.jenkins.io/docker-workflow/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker-pipeline`
-- [Docker Build & Push](https://plugins.jenkins.io/docker-build-publish/) `.docker/jenkins_plugins/custom_jenkin_plugins/docker-build-push`
-- [Kubernetes](https://plugins.jenkins.io/kubernetes/) `.docker/jenkins_plugins/custom_jenkin_plugins/kubernetes/`
-- [NodeJs](https://plugins.jenkins.io/nodejs/) `.docker/jenkins_plugins/custom_jenkin_plugins/nodejs`
-
-SDKs
-
-- [aws-java-sdk-sqs](https://plugins.jenkins.io/aws-java-sdk-sqs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-sqs`
-- [aws-java-sdk-sns](https://plugins.jenkins.io/aws-java-sdk-sns/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-sns`
-- [aws-java-sdk-cloudformation](https://plugins.jenkins.io/aws-java-sdk-cloudformation/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-cloudformation`
-- [aws-java-sdk-elastic-beanstalk](https://plugins.jenkins.io/aws-java-sdk-elasticbeanstalk/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-elasticbeanstalk`
-- [aws-java-sdk-ecs](https://plugins.jenkins.io/aws-java-sdk-ecs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-ecs`
-- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-iam/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-iam`
-- [aws-java-sdk-iam](https://plugins.jenkins.io/aws-java-sdk-efs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-efs`
-- [aws-java-sdk-ssm](https://plugins.jenkins.io/aws-java-sdk-ssm/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-ssm`
-- [aws-java-sdk-logs](https://plugins.jenkins.io/aws-java-sdk-logs/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-logs`
-- [aws-java-sdk-codebuild](https://plugins.jenkins.io/aws-java-sdk-codebuild/) `.docker/jenkins_plugins/custom_jenkin_plugins/sdk/aws-java-sdk-codebuild`
+- [Amazon EC2](https://plugins.jenkins.io/amazon-ec2/) 
+- [Amazon ECR](https://plugins.jenkins.io/amazon-ecr/) 
+- [Amazon ECS](https://plugins.jenkins.io/amazon-ecs/)
+- [Configuration As Code](https://www.jenkins.io/projects/jcasc/) 
+- [Docker](https://plugins.jenkins.io/docker-plugin/) 
+- [Docker Pipeline](https://plugins.jenkins.io/docker-workflow/) 
+- [Docker Build & Push](https://plugins.jenkins.io/docker-build-publish/) 
+- [Kubernetes](https://plugins.jenkins.io/kubernetes/) 
+- [NodeJs](https://plugins.jenkins.io/nodejs/) 
 
 Themes
 
@@ -76,29 +61,19 @@ You can create your own custom Jenkins image based off off `jenkins/jenkins` doc
 
 ## Themes
 
-Add or uncomment the following lines to your `Dockerfile` for the theme you wish to preinstall with the Jenkins docker image
 
 # Blue Ocean
 
 ![screenshot](./src/images/jenkins_blueocean.png)
-```
-COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/blue-ocean /usr/share/jenkins/ref/plugins
-```
+
 # Dark-theme
 
 ![screenshot](./src/images/jenkins_darktheme_dark.png)
-
-```
-COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/dark-theme /usr/share/jenkins/ref/plugins
-```
 
 # Material-theme
 
 ![screenshot](./src/images/jenkins_materialtheme_red.png)
 
-```
-COPY --chown=jenkins:jenkins .docker/jenkins_plugins/custom_jenkin_plugins/themes/material-theme /usr/share/jenkins/ref/plugins
-```
 
 ## Jenkins Configuration As Code (JCasc)
 
