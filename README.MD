@@ -50,6 +50,23 @@ Themes
 - [Simple Theme](https://plugins.jenkins.io/simple-theme-plugin/)
 
 
+## Import your own existing Jenkins Plugin List
+
+Use the `generate-plugins` bash script to import your own Jenkins Plugin list.
+
+```
+tony@test-lab jenkins-as-code % ./generate-plugins 
+
+curl https://jenkins-hostname/jnlpJars/jenkins-cli.jar
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 3337k  100 3337k    0     0  2933k      0  0:00:01  0:00:01 --:--:-- 2943k
+
+java -jar jenkins-cli.jar -s https://jenkins-hostname -auth admin_user:admin_password groovy = plugins.txt
+```
+
+You will see a newly generated file called `plugins.txt`
+
 # Quick Start
 
 To see a working demo, simply git clone this repo then run `docker-compose up -d` which will create a new jenkins-docker-container on local.
